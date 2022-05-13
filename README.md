@@ -14,7 +14,11 @@ struct node
 
 *Schemat (16.0) lista jednokierunkowa o wierzchołkach z przykładu 16.0*
 
+![s1 ](https://user-images.githubusercontent.com/71324202/168259048-539f1516-2913-4e1c-aefe-606523fac9f0.png)
+
 *Schemat (16.1) lista jednokierunkowa o wierzchołkach z przykładu 16.0 o konkretych danych*
+
+![s2](https://user-images.githubusercontent.com/71324202/168259051-b328ce01-59db-4597-9d46-37d868114dae.png)
 
 W listach pierwszy element nazywany jest głową, a ostanti ogonem. W tym rozdziale zostanie zaprezentowana praktyczne budowa listy.
 
@@ -75,22 +79,21 @@ int main(int argc, char *argv[] ) {
 ```
 
 
-// addHead1
+![addHead1](https://user-images.githubusercontent.com/71324202/168259061-ade4f9a7-01f9-49c2-9575-1ec5b8fb19e5.png)
 
 Po wykonaniu tej operacji ustawiamy wskaźnik główny (tej znajdujący się w main) na NULL, czyli tworzymy pustą listę.
 
 Krok po kroku funkcja addToHead - `head = addToHead(head,3);` :
 
-// addHead2
+![addHead2](https://user-images.githubusercontent.com/71324202/168259062-520a7076-a939-4b0d-93be-e213f8c9e330.png)
 
 Po wykonaniu tej operacji otrzymujemy blok zaalokowanej pamięci, nie znamy wartości jej parametrów. Jeżeliby zdarzyła się sytuacja, że pamięć nie zostałaby zaalokowana wtedy newNode przyjmie wartość NULL, i wtedy nasza funkcja zareaguje z odpowiednim komunikatem do stderr, oraz przerwie wykonywanie funkcji.
 
-
-// addHead3
+![addHead3](https://user-images.githubusercontent.com/71324202/168259064-c7df3e65-2e6a-452f-95a0-b0d4bb85a536.png)
 
 Te operacje dają już nam kontrole nad zawartościami zmiennych składowych struktury wierzchołka
 
-// addHead4
+![addHead4](https://user-images.githubusercontent.com/71324202/168259065-df6b89d3-ec86-4cc6-b5f6-7cfc4da35cba.png)
 
 Zwrócona wartość w funkcji `main`, zmienia wartość naszej głowy tak aby wskaźnik wskazywał na nasz nowo stworzony element.
 
@@ -98,12 +101,11 @@ Krok po kroku funkcja addToHead - `head = addToHead(head,5);` :
 
 kroki w tej części są analogiczne do poprzedniego wywołania tej funkcji:
 
-// addHead5
+![addHead5](https://user-images.githubusercontent.com/71324202/168259067-ce127742-e95b-4629-a534-300cd54b26f4.png)
 
 Krok po kroku funkcja addToHead - `head = addToHead(head,4)`;
 
-// addHead6
-
+![addHead6](https://user-images.githubusercontent.com/71324202/168259068-109fd3c2-a433-40af-9b06-08f23490d343.png)
 
 *Przykład (16.1.1) funkcja addToHead w inny sposób*
 
@@ -189,31 +191,31 @@ int main(int argc, char *argv[]) {
 
 Zakładamy, że elementy listy zostały dodane (tak jak w omówieniu funkcji `addToHead`)
 
-// removeFromTail1
+![removeFromTail1](https://user-images.githubusercontent.com/71324202/168259072-f6181a58-1575-473b-a6a2-31e525ce8113.png)
 
 Wchodzimy wewnątrz funkcji `removeFromTail`, gdzie na start sprawdzany jest warunek czy istnieje `head`, czyli czy aby przypadkiem lista nie jest pusta. Jest on spełniony, ponieważ w naszej liście są 3 elementy więc `head` istnieje (jest różny od NULL). Drugi warunek sprawdza czy `head->next` istnieje, czyli czy aby głowa nie była jednocześnie ogonem. Ten warunek nie jest spełniony, także omijamy kod wewnątrz zawarty (wrócimy tam w odpowiednim momencie).
 
-// removeFromTail2
+![removeFromTail2](https://user-images.githubusercontent.com/71324202/168259074-048c8f12-02fd-40d6-9b7d-4d3c2a77c72a.png)
 
 Tworzymy dwa wskaźniki tymczasowe, które pozwolą nam przemieszczać się swobodnie po liście, nie ruszając wskaźnika głowy. Na początek wskazuą one ten sam element co `head` (`tmp1`) oraz jego parametr `next` (`tmp2`). W tym przypadku potrzebne są nam 2 wzkaźniki, koniecznie kontrolowane w taki sposób, aby wskazywały dwa sąsiednie elementy. Dlaczego jest to konieczne zostanie przedstawione w kolejnych krokach.
 
-// removeFromTail3
+![removeFromTail3](https://user-images.githubusercontent.com/71324202/168259077-e531f13c-7bc8-4306-8e96-21562171524a.png)
 
 Pętla ustawia nam wskażnik `tmp2` na ogonie, a `tmp1` jeden element przed ogonem. W tym wypadku kończy się ona po pierwszej iteracji. 
 
-// removeFromTail4
+![removeFromTail4](https://user-images.githubusercontent.com/71324202/168259078-7bb6ab41-5cd3-4d36-be2f-3a0a0d12931c.png)
 
 To miejsce w kodzie jest uzasadnieniem dlaczego zostały użyte aż dwa wskaźniki pomocnicze. Zauważmy, że z ogona, nie mamy dostępu do naszego poprzednika, przez co niemożliwym byłoby skorygowanie jego wartości next, która po operacji zwolnienia pamięci nadal wskazuje na tę wartość. Nad nią jednak już straciliśmy konrtolę i nie możemy zostawić naszej listy w takim stanie. Spowodowałoby to błędy operacji na pamięci, ponieważ nasza lista posiadała by "dziurę", przez którą najprawdopodobniej wpadniemy w niekontrolowany przez nas obszar pamięci. Aby temu zapodbiec wykonujemy kolejną operację właśnie dzięki wzkaźnikowi pomocniczemu `tmp1` pokazaną poniżej.
 
-// removeFromTail5
+![removeFromTail5](https://user-images.githubusercontent.com/71324202/168259079-2cc792cb-5775-4041-aff2-8111bf3ef4b2.png)
 
-// removeFromTail6
+![removeFromTail6](https://user-images.githubusercontent.com/71324202/168259037-e590b54e-050f-4ec7-8875-f172b00692dc.png)
 
 Kolejne dwa wywołania funkcji zadziałają analogicznie do tego opisanego powyżej.
 
-// removeFromTail7
+![removeFromTail7](https://user-images.githubusercontent.com/71324202/168259042-af548939-341b-4653-8e2c-34c91b3ca294.png)
 
-// removeFromTail8
+![removeFromTail8](https://user-images.githubusercontent.com/71324202/168259044-33261014-1dbd-40ad-bfc5-777941062ae1.png)
 
 Warto zauważyć, że ostatni element usuwany jest poprzez wejście do wnętrza drugiej instrukcji `if`.
 
@@ -293,17 +295,25 @@ Kolejka FIFO to skrót nazwy first-in first-out. Jest to taka najbardziej natura
 
 *Schemat (16.2) kolejka FIFO*
 
+![s2](https://user-images.githubusercontent.com/71324202/168259051-b328ce01-59db-4597-9d46-37d868114dae.png)
+
 Kolejka LIFO (analogicznie last-in last-out), można zobrazować za pomocą stosu (stack) poprzez stos talerzy. Jeżeli chcemy wyjąć talerz na spodzie, to musimy najpierw zdjąć wszystkie talerze znajdujące się na docelowym. Taką listę obsługujemy poprzez funkcję push (dodawanie do stosu) i pop (zdejmowanie ze stosu). Korzystając z uprzednio napisanych funkcji z przykładów (14.0-14.4) można stworzyć stos tworząc dodatkowo funkcję removeFromHead lub addToTail gdzie opcja z funkcjami operującymi na głowie jest znowu bardziej intuicyjna do wykonania i obsługi.
 
 *Schemat (16.3) kolejka LIFO*
+
+![s3](https://user-images.githubusercontent.com/71324202/168259055-5867bf26-a61a-4bca-805e-8ce688aa112d.png)
 
 Listy mogą być również dwukierunkowe. W takim przypadku programista musi zaprogramować struktury wskaźnik na poprzedni element listy. 
 
 *Schemat (16.4) lista dwukierunkowa*
 
+![s4](https://user-images.githubusercontent.com/71324202/168259057-10281b00-d0a8-466f-a853-e5a8d182bfbe.png)
+
 Lista cykliczna, to lista, której ostatni element wskazuje na pierwszy, a w przypadku listy dwukierunkowej jeszcze pierwszy element wskazuje na ostatni.  
 
 *Schemat (16.5) lista cykliczna dwukierunkowa*
+
+![s5](https://user-images.githubusercontent.com/71324202/168259059-cd4527e3-e629-47c9-9d89-339e607d7f9b.png)
 
 ## Zadania do samodzielnego wykonania:
 
