@@ -14,11 +14,11 @@ struct node
 
 *Schemat (16.0) lista jednokierunkowa o wierzchołkach z przykładu 16.0*
 
-![s1 ](https://user-images.githubusercontent.com/71324202/168259048-539f1516-2913-4e1c-aefe-606523fac9f0.png)
+![s0](https://user-images.githubusercontent.com/71324202/168259046-06d137f5-8a78-4d1e-aa2b-d8b53ca4e986.png)
 
 *Schemat (16.1) lista jednokierunkowa o wierzchołkach z przykładu 16.0 o konkretych danych*
 
-![s2](https://user-images.githubusercontent.com/71324202/168259051-b328ce01-59db-4597-9d46-37d868114dae.png)
+![s1](https://user-images.githubusercontent.com/71324202/168259048-539f1516-2913-4e1c-aefe-606523fac9f0.png)
 
 W listach pierwszy element nazywany jest głową, a ostanti ogonem. W tym rozdziale zostanie zaprezentowana praktyczne budowa listy.
 
@@ -321,7 +321,7 @@ Lista cykliczna, to lista, której ostatni element wskazuje na pierwszy, a w prz
 
 
 ***
-[Poprzednia część]() | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) | [Następna część]()
+[Poprzednia część](https://github.com/CyberMALab/Obsluga-plikow-i-strumieni-wejscia-i-wyjscia.git) | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) |
 ***
 &copy; Cyberspace Modelling and Analysis Laboratory
 
